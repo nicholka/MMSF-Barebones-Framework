@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{35EC0B3D-DFE7-49D5-8974-E7A766B4992E}</ProjectGuid>
+    <RootNamespace>MultilateralManipulationFramework</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\chai3d\src;..\..\chai3d\external\glew\include;..\..\chai3d\extras\freeglut\include;..\..\chai3d\external\Eigen;$(SolutionDir)\$(ProjectName)\Source\GeneralFramework;$(SolutionDir)\$(ProjectName)\Headers;$(SolutionDir)\$(ProjectName)\Headers\GeneralFramework;$(SolutionDir)\$(ProjectName)\Source</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\chai3d\extras\freeglut\lib\Debug\Win32;..\..\chai3d\lib\Debug\Win32</AdditionalLibraryDirectories>
+      <AdditionalDependencies>freeglut.lib;chai3d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/VERBOSE %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Headers\GeneralFramework\FileIO.h" />
+    <ClInclude Include="Headers\GeneralFramework\HelperStructures.h" />
+    <ClInclude Include="Headers\GeneralFramework\Notifiee.h" />
+    <ClInclude Include="Headers\GeneralFramework\ORManager.h" />
+    <ClInclude Include="Headers\GeneralFramework\PointXYZ.h" />
+    <ClInclude Include="Headers\GeneralFramework\Robot.h" />
+    <ClInclude Include="Headers\GeneralFramework\RobotAction.h" />
+    <ClInclude Include="Headers\GeneralFramework\RobotHardware.h" />
+    <ClInclude Include="Headers\GeneralFramework\RobotToolbox.h" />
+    <ClInclude Include="Headers\GeneralFramework\SurgicalOperatorManager.h" />
+    <ClInclude Include="Headers\GeneralFramework\SurgicalProcedureManager.h" />
+    <ClInclude Include="Headers\GeneralFramework\VE.h" />
+    <ClInclude Include="Headers\GeneralFramework\VEParameters.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\GeneralFramework\FileIO.cpp" />
+    <ClCompile Include="Source\GeneralFramework\ORManager.cpp" />
+    <ClCompile Include="Source\GeneralFramework\PointXYZ.cpp" />
+    <ClCompile Include="Source\GeneralFramework\Robot.cpp" />
+    <ClCompile Include="Source\GeneralFramework\RobotHardware.cpp" />
+    <ClCompile Include="Source\GeneralFramework\RobotToolbox.cpp" />
+    <ClCompile Include="Source\GeneralFramework\SurgicalProcedureManager.cpp" />
+    <ClCompile Include="Source\Main.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
